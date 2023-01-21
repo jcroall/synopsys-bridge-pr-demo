@@ -60,4 +60,5 @@ jobs:
           blackduck_scan_full: false
         env:
           MACOSX_BRIDGE_URL: "https://artifactory.internal.synopsys.com:443/artifactory/clops-local/clops.sig.synopsys.com/synopsys-action/0.1.155-demo-only/ci-package-0.1.155-demo-only-macosx.zip"
-
+          BRIDGE_COVERITY_CONNECT_RESULTS_INTEGRATION_ENABLED: true
+          BRIDGE_BLACKDUCK_RESULTS_INTEGRATION_ENABLED: true
