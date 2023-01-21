@@ -5,9 +5,16 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+permissions:
+  issues: write
+  discussions: write
+  pull-requests: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -60,5 +67,6 @@ jobs:
           blackduck_scan_full: false
         env:
           MACOSX_BRIDGE_URL: "https://artifactory.internal.synopsys.com:443/artifactory/clops-local/clops.sig.synopsys.com/synopsys-action/0.1.155-demo-only/ci-package-0.1.155-demo-only-macosx.zip"
+          BRIDGE_GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
           BRIDGE_COVERITY_CONNECT_RESULTS_INTEGRATION_ENABLED: true
           BRIDGE_BLACKDUCK_RESULTS_INTEGRATION_ENABLED: true

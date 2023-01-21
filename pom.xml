@@ -20,12 +20,10 @@
       <scope>test</scope>
     </dependency>
     <!-- Add dependency for testing -->
-    <!--
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>bootstrap</artifactId>
       <version>3.3.7</version>
     </dependency>
-    -->
   </dependencies>
 </project>
